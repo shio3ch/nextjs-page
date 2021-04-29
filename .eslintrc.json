@@ -1,24 +1,47 @@
 {
-    "env": {
-        "browser": true,
-        "es2020": true
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true, // JSXの解析を有効にする
+      "modules": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "google"
+    "ecmaVersion": 11,
+    "sourceType": "module" // インポートの使用を許可する
+  },
+  "plugins": ["@typescript-eslint", "react"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint",
+    "prettier/react"
+  ],
+  "rules": {
+    // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
+    "react/prop-types": ["off"],
+    "react/react-in-jsx-scope": "false",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".jsx", ".tsx"]
+      }
     ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 11,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "@typescript-eslint"
-    ],
-    "rules": {
-    }
+    // https://github.com/prettier/prettier/blob/main/docs/options.md
+    "prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "endOfLine": "lf",
+        "tabWidth": 2,
+        "semi": false,
+        "singleQuote": false
+      }
+    ]
+  }
 }
