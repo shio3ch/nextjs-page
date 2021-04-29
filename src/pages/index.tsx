@@ -1,6 +1,5 @@
-import React from 'react';
+import Layout from "../components/templates/layout";
 
-// eslint-disable-next-line require-jsdoc
-export default function HomePage() {
-  return <div>Hello, world!</div>;
+export default function () {
+  return <Layout name="hoge" />;
 }
